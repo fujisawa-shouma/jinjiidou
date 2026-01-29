@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ux_client_script">
+    <sys_ux_client_script action="INSERT_OR_UPDATE">
+        <controller_preset/>
+        <includes/>
+        <macroponent display_value="Record Default">335b15067e5eb6101cab106f44eec565</macroponent>
+        <name>debug - show state</name>
+        <preset/>
+        <required_translations>[]</required_translations>
+        <script><![CDATA[/**
+* @param {params} params
+* @param {api} params.api
+* @param {any} params.event
+* @param {any} params.imports
+* @param {ApiHelpers} params.helpers
+*/
+function handler({api, event, helpers, imports}) {
+    console.debug(`[Debug]
+${">".repeat(40)}
+${event.name}: ${event.elementId} - elemId=${event.elementId}
+State=`, api.state, "\nEvent=", event);
+}]]></script>
+        <script_api_version>2.0.0</script_api_version>
+        <sys_class_name>sys_ux_client_script</sys_class_name>
+        <sys_created_by>admin_komoto_ryota</sys_created_by>
+        <sys_created_on>2026-01-13 07:31:03</sys_created_on>
+        <sys_id>08c61717835a7250470dcbc6feaad305</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>debug - show state</sys_name>
+        <sys_package display_value="人事異動申請" source="x_1813832_1">e102d102831eb610470dcbc6feaad3ae</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="人事異動申請">e102d102831eb610470dcbc6feaad3ae</sys_scope>
+        <sys_update_name>sys_ux_client_script_08c61717835a7250470dcbc6feaad305</sys_update_name>
+        <sys_updated_by>admin_komoto_ryota</sys_updated_by>
+        <sys_updated_on>2026-01-13 07:31:03</sys_updated_on>
+        <target>macroponent</target>
+        <type>default</type>
+    </sys_ux_client_script>
+</record_update>

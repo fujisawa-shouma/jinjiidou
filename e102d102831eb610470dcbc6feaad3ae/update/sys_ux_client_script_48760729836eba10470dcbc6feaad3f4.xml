@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ux_client_script">
+    <sys_ux_client_script action="INSERT_OR_UPDATE">
+        <controller_preset/>
+        <includes/>
+        <macroponent display_value="Record Default">335b15067e5eb6101cab106f44eec565</macroponent>
+        <name>typeahead_2/items</name>
+        <preset/>
+        <required_translations>[]</required_translations>
+        <script><![CDATA[// /**
+//  * @param {params} params
+//  * @param {api} params.api
+//  * @param {TransformApiHelpers} params.helpers
+//  */
+// function evaluateProperty({
+//     api,
+//     helpers
+// }) {
+
+//     /**
+//      * Data ResourceのImmediateにしておく必要があるみたい
+//      * 下記のrefresh()をしてもデータ取得されず
+//      * api.data.look_up_union_department.refresh();// NG
+//      */
+//     const recs = api.data.look_up_department.results;
+//     // let recs = [];
+//     // // console.warn('recs>>>',recs);
+//     // for (let i = 0; i < test.length; i ++) {
+//     //     // console.log(recs[i]);
+//     //     recs.append(test[i]);
+//     //     }
+//     console.warn('recs>>>', recs);
+
+//     const listDepartment = recs.map(rec => ({
+//         id: rec.sys_id.value,
+//         label: `${rec.department_name_1.value} ${rec.department_name_2.value} ${rec.department_name_3.value} ${rec.department_name_4.value} ${rec.department_name_5.value}`.trim(),
+//         sublabel: rec.affiliation_code.value
+//     }));
+
+
+
+//     // const sortRecs = recs.sort((a, b) => {
+//     //     // 所属コード
+//     //     if (a.id < b.id) return 1;
+//     // });
+
+//     // // sortRecs
+
+//     // const listDepartment = sortRecs.map(rec => {
+//     //     return {
+//     //         "id": rec.sys_id,
+//     //         "label": `${rec.department_name1} ${rec.department_name2} ${rec.department_name3} ${rec.department_name4} ${rec.department_name5}`.trim(),
+//     //         "sublabel": `${rec.id}`
+//     //     };
+//     // });
+//     // console.debug(">>> Department search count=", listDepartment.length, "\nqueryDept=", api.state.queyDepartment);
+//     // // api.setState("listDepartment", listDepartment);
+//     // return listDepartment;
+
+// }
+
+
+function evaluateProperty({ api /*, helpers */ }) {
+  // Lookup/Composite なので results に配列が入る想定
+  const recs = api?.data?.look_up_department?.results ?? [];
+  if (!Array.isArray(recs) || recs.length === 0) return [];
+
+  const getFieldValue = (field) => (
+    field?.value?.value ?? field?.value ?? field?.displayValue ?? ""
+  );
+
+  // 必要なら安全なソート（affiliation_code 降順の例）
+  const sorted = [...recs].sort((a, b) => {
+    const ax = getFieldValue(a?.affiliation_code).toString();
+    const bx = getFieldValue(b?.affiliation_code).toString();
+    return bx.localeCompare(ax, "ja");
+  });
+
+  const items = sorted.map((rec) => {
+    const sysId = getFieldValue(rec?.sys_id);
+    const n1 = getFieldValue(rec?.department_name_1);
+    const n2 = getFieldValue(rec?.department_name_2);
+    const n3 = getFieldValue(rec?.department_name_3);
+    const n4 = getFieldValue(rec?.department_name_4);
+    const n5 = getFieldValue(rec?.department_name_5);
+    const code = getFieldValue(rec?.affiliation_code);
+
+    const label = [n1, n2, n3, n4, n5].filter(Boolean).join(" ").trim();
+
+    return {
+      id: sysId || rec?._row_data?.uniqueValue || "", // 念のため uniqueValue もフォールバック
+      label,
+      sublabel: code
+    };
+  }).filter(x => x.id); // id 無しは除外
+
+  return items;
+}
+]]></script>
+        <script_api_version>2.0.0</script_api_version>
+        <sys_class_name>sys_ux_client_script</sys_class_name>
+        <sys_created_by>admin_komoto_ryota</sys_created_by>
+        <sys_created_on>2026-01-20 06:58:59</sys_created_on>
+        <sys_id>48760729836eba10470dcbc6feaad3f4</sys_id>
+        <sys_mod_count>13</sys_mod_count>
+        <sys_name>typeahead_2/items</sys_name>
+        <sys_package display_value="人事異動申請" source="x_1813832_1">e102d102831eb610470dcbc6feaad3ae</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="人事異動申請">e102d102831eb610470dcbc6feaad3ae</sys_scope>
+        <sys_update_name>sys_ux_client_script_48760729836eba10470dcbc6feaad3f4</sys_update_name>
+        <sys_updated_by>admin_komoto_ryota</sys_updated_by>
+        <sys_updated_on>2026-01-20 08:52:33</sys_updated_on>
+        <target>macroponent</target>
+        <type>transform</type>
+    </sys_ux_client_script>
+</record_update>

@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_1813832_1.UserUtils</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <mobile_callable>false</mobile_callable>
+        <name>UserUtils</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[class UserUtils {
+	constructor() {
+		this.type = "UserUtils";
+		this.log = new global.GSLog(gs.getCurrentScopeName() + ".LogLevel", this.type);
+	}
+	/**
+	 * ユーザーテーブルからユーザー情報を返す
+	 * @Param {SysId} userid: 対象ユーザーのsys_id
+	 * @Returns {Hash} ret ユーザー情報のハッシュ
+	 *   user_name: ユーザーID
+	 *   name_ja:   漢字氏名
+	 *   dept_name: 所属の表示名
+	 *   dept_name1~5: 所属名称１～５
+	 *   position_name: 役職名
+	 *   affiliation_code: 所属コード
+	 */
+	getUserInfo(userid) {
+		var ret = {};
+		var sysId = userid || gs.getUserID();
+		var gr = new GlideRecord("sys_user");
+		if (gr.get(sysId)) {
+			return this._getUserInfo(gr);
+		} else {
+			gs.addErrorMessage("UserUtil:User record not found. sysid=" + sysId);
+			this.log.error("UserUtil:User record not found. sysid=" + sysId);
+		}
+		return;
+	}
+
+	/**
+	 * 所属テーブルからユーザー情報を返す
+	 * @Param {SysId} userid: 対象ユーザーのsys_id
+	 * @Returns {Hash}  ret ユーザー情報のハッシュ
+	 *   user_name: ユーザーID
+	 *   name_ja:   漢字氏名
+	 *   dept_name: 所属の表示名
+	 *   dept_name1~5: 所属名称１～５
+	 *   position_name: 役職名
+	 *   affiliation_code: 所属コード
+	 */
+	getUserInfoFromAffiliation(sysId) {
+		var ret = {};
+		if (!sysId) {
+			gs.addErrorMessage("UserUtil:getUserInfoFromAffiliation(): parm sysId is null.");
+			this.log.error("UserUtil:getUserInfoFromAffiliation(): parm sysId is null.");
+			return ret;
+		}
+		var gr = new GlideRecord('x_1813832_1_affiliation');
+		if (gr.get(sysId)) {
+			ret = {
+				user_name: gr.u_user_name.user_name + "", // ユーザーID
+				name_ja: gr.u_user_name.u_name_ja + "",
+				dept_name: gr.getDisplayValue(),
+				dept_name1: gr.u_afi_code.u_dept_name1 + "",
+				dept_name2: gr.u_afi_code.u_dept_name2 + "",
+				dept_name3: gr.u_afi_code.u_dept_name3 + "",
+				dept_name4: gr.u_afi_code.u_dept_name4 + "",
+				dept_name5: gr.u_afi_code.u_dept_name5 + "",
+				position_name: gr.u_position_name + "", // 役職名
+				affiliation_code: gr.u_afi_code.id + "", // 所属コード
+			};
+			return ret;
+		} else {
+			gs.addErrorMessage("UserUtil:Affiliation data not found. sysId=" + sysId);
+			this.log.error("UserUtil:Affiliation data not found. sysId=" + sysId);
+		}
+		return;
+	}
+
+	/**
+	 * ユーザーIDをもとにユーザーテーブルからユーザー情報を返す
+	 * @Param {String} userName: 対象ユーザーのuser_name
+	 * @Returns {Hash} ret ユーザー情報のハッシュ
+	 *   user_name: ユーザーID
+	 *   name_ja:   漢字氏名
+	 *   dept_name: 所属の表示名
+	 *   dept_name1~5: 所属名称１～５
+	 *   position_name: 役職名
+	 *   affiliation_code: 所属コード
+	 */
+	getUserInfoFromUserName(userName) {
+		var ret = {};
+		var user_name = userName || gs.getUserName();
+		var gr = new GlideRecord("sys_user");
+		if (gr.get('user_name', user_name)) {
+			return this._getUserInfo(gr);
+		} else {
+			gs.addErrorMessage("UserUtil:User record not found. user_name=" + user_name);
+			this.log.error("UserUtil:User record not found. user_name=" + user_name);
+		}
+		return;
+	}
+	getUserInfoByUserName(name) {
+		return this.getUserInfoFromUserName(name);
+	}
+	/**
+	 * ユーザーレコードから情報を返す
+	 */
+	_getUserInfo(rec) {
+		return {
+			user_name: rec.getValue("user_name"), // UserID
+			name_ja: rec.getValue("name_ja"), // 漢字氏名
+			dept_name: rec.u_main_affiliation.getDisplayValue(),
+			dept_name1: rec.u_main_affiliation.u_afi_code.u_dept_name1 + "",
+			dept_name2: rec.u_main_affiliation.u_afi_code.u_dept_name2 + "",
+			dept_name3: rec.u_main_affiliation.u_afi_code.u_dept_name3 + "",
+			dept_name4: rec.u_main_affiliation.u_afi_code.u_dept_name4 + "",
+			dept_name5: rec.u_main_affiliation.u_afi_code.u_dept_name5 + "",
+			position_name: rec.u_main_affiliation.u_position_name + "", // 役職名
+			affiliation_code: rec.u_main_affiliation.u_afi_code.id + "",
+			dept_fullname: rec.u_main_affiliation.u_afi_code.u_dept_name1 + rec.u_main_affiliation.u_afi_code.u_dept_name2 + rec.u_main_affiliation.u_afi_code.u_dept_name3 + rec.u_main_affiliation.u_afi_code.u_dept_name4 + rec.u_main_affiliation.u_afi_code.u_dept_name5,
+		};
+	}
+
+	/**
+	 * 委任先を取得する
+	 */
+	getDelegators(user) {
+		var u = gs.getUserID();
+		var answer = [];
+		var i = 0;
+		answer.push(user);
+		var g = new GlideRecord("sys_user_delegate");
+		g.addQuery("user", user);
+		// g.addQuery("delegate", u);
+		g.addQuery("approvals", "true");
+		g.addQuery("starts", "<=", gs.daysAgo(0));
+		g.addQuery("ends", ">=", gs.daysAgo(0));
+		g.query();
+		while (g.next())
+			answer.push(g.delegate.toString());
+
+		return answer;
+	}
+	/**
+	 * ユーザーレコードをActiveにする
+	 */
+	activateUser(user) {
+		if (!user) return;
+		var gr = new GlideRecord("sys_user");
+		if (gr.get(user)) {
+			var active = gr.active;
+			if (!active) {
+				gr.active = true;
+				gr.locked_out = false;
+				return (gr.update());
+			}
+			this.log.info("Already active user. user=" + user);
+		}
+		return;
+	}
+}]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin_komoto_ryota</sys_created_by>
+        <sys_created_on>2026-01-22 01:32:57</sys_created_on>
+        <sys_id>db1dd09a83aafe10470dcbc6feaad3b8</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>UserUtils</sys_name>
+        <sys_package display_value="人事異動申請" source="x_1813832_1">e102d102831eb610470dcbc6feaad3ae</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="人事異動申請">e102d102831eb610470dcbc6feaad3ae</sys_scope>
+        <sys_update_name>sys_script_include_db1dd09a83aafe10470dcbc6feaad3b8</sys_update_name>
+        <sys_updated_by>admin_komoto_ryota</sys_updated_by>
+        <sys_updated_on>2026-01-22 01:41:57</sys_updated_on>
+    </sys_script_include>
+</record_update>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ux_client_script">
+    <sys_ux_client_script action="INSERT_OR_UPDATE">
+        <controller_preset/>
+        <includes/>
+        <macroponent display_value="Record Default">335b15067e5eb6101cab106f44eec565</macroponent>
+        <name>Upload File - Actual upload</name>
+        <preset/>
+        <required_translations>[]</required_translations>
+        <script><![CDATA[/**
+* @param {params} params
+* @param {api} params.api
+* @param {any} params.event
+* @param {any} params.imports
+* @param {ApiHelpers} params.helpers
+*/
+async function handler({api, event, helpers, imports}) {
+    debugger;
+    const tableName = api.state.tableName;
+    const tableSysId = api.state.tableSysId;
+    const file = api.state.uploadFileObject;
+    const url = `/api/now/attachment/file?table_name=${encodeURIComponent(tableName)}&table_sys_id=${encodeURIComponent(tableSysId)}&file_name=${encodeURIComponent(file.name)}`;
+    console.debug(">>>>>API URL=" + url);
+
+    var attachmentSysId;
+
+    /**
+        {response}としないと、response.response.resultになるため
+    */
+    const {
+        response
+    } = await helpers.snHttp(url, {
+        method: "POST",
+        headers: {
+            "Content-Type": file.type || 'application/octet-stream',
+            'Accept': "application/json"
+        },
+        body: file,
+        credentials: "include"
+    });
+
+    if (!response.result) {
+        throw new Error("Upload failed: " + response.status);
+    }
+    attachmentSysId = response.result.sys_id;
+    console.debug(">>>>>Attachemnt sysID=" + attachmentSysId);
+
+    // SysIdを設定すると、しばらくしたらGet Excel DataがFetchされる
+    api.setState("attachmentSysId", attachmentSysId);
+// debugger;
+    // Mutateに変更したための検証
+    // var ret = await api.data.get_excel_data.execute({sys_id: attachmentSysId});
+
+
+}]]></script>
+        <script_api_version>2.0.0</script_api_version>
+        <sys_class_name>sys_ux_client_script</sys_class_name>
+        <sys_created_by>admin_komoto_ryota</sys_created_by>
+        <sys_created_on>2026-01-14 00:48:24</sys_created_on>
+        <sys_id>2c028b6f8396f250470dcbc6feaad31b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Upload File - Actual upload</sys_name>
+        <sys_package display_value="人事異動申請" source="x_1813832_1">e102d102831eb610470dcbc6feaad3ae</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="人事異動申請">e102d102831eb610470dcbc6feaad3ae</sys_scope>
+        <sys_update_name>sys_ux_client_script_2c028b6f8396f250470dcbc6feaad31b</sys_update_name>
+        <sys_updated_by>admin_komoto_ryota</sys_updated_by>
+        <sys_updated_on>2026-01-14 00:48:24</sys_updated_on>
+        <target>macroponent</target>
+        <type>default</type>
+    </sys_ux_client_script>
+</record_update>

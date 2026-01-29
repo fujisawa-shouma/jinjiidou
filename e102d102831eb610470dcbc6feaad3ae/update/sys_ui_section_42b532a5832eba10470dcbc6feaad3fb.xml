@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_section caption="" section_id="42b532a5832eba10470dcbc6feaad3fb" sys_domain="global" table="x_1813832_1_affiliation" version="3" view="">
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>name</element>
+            <position>0</position>
+            <sys_created_by>admin_komoto_ryota</sys_created_by>
+            <sys_created_on>2026-01-20 04:42:57</sys_created_on>
+            <sys_id>92b572a5832eba10470dcbc6feaad305</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_1813832_1_affiliation" sys_domain="global" view="Default view">42b532a5832eba10470dcbc6feaad3fb</sys_ui_section>
+            <sys_updated_by>admin_komoto_ryota</sys_updated_by>
+            <sys_updated_on>2026-01-20 04:42:57</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>user_id</element>
+            <position>1</position>
+            <sys_created_by>admin_komoto_ryota</sys_created_by>
+            <sys_created_on>2026-01-21 02:15:51</sys_created_on>
+            <sys_id>89ad1f3183a27e10470dcbc6feaad32e</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_1813832_1_affiliation" sys_domain="global" view="Default view">42b532a5832eba10470dcbc6feaad3fb</sys_ui_section>
+            <sys_updated_by>admin_komoto_ryota</sys_updated_by>
+            <sys_updated_on>2026-01-21 02:15:51</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>affiliation_code</element>
+            <position>2</position>
+            <sys_created_by>admin_komoto_ryota</sys_created_by>
+            <sys_created_on>2026-01-21 02:15:51</sys_created_on>
+            <sys_id>cdad1f3183a27e10470dcbc6feaad34a</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_1813832_1_affiliation" sys_domain="global" view="Default view">42b532a5832eba10470dcbc6feaad3fb</sys_ui_section>
+            <sys_updated_by>admin_komoto_ryota</sys_updated_by>
+            <sys_updated_on>2026-01-21 02:15:51</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>concurrent_number</element>
+            <position>3</position>
+            <sys_created_by>admin_komoto_ryota</sys_created_by>
+            <sys_created_on>2026-01-21 02:15:51</sys_created_on>
+            <sys_id>c9ad1f3183a27e10470dcbc6feaad358</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_1813832_1_affiliation" sys_domain="global" view="Default view">42b532a5832eba10470dcbc6feaad3fb</sys_ui_section>
+            <sys_updated_by>admin_komoto_ryota</sys_updated_by>
+            <sys_updated_on>2026-01-21 02:15:51</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>position_authority_code</element>
+            <position>4</position>
+            <sys_created_by>admin_komoto_ryota</sys_created_by>
+            <sys_created_on>2026-01-21 02:15:51</sys_created_on>
+            <sys_id>19ad1f3183a27e10470dcbc6feaad366</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_1813832_1_affiliation" sys_domain="global" view="Default view">42b532a5832eba10470dcbc6feaad3fb</sys_ui_section>
+            <sys_updated_by>admin_komoto_ryota</sys_updated_by>
+            <sys_updated_on>2026-01-21 02:15:51</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>position_code</element>
+            <position>5</position>
+            <sys_created_by>admin_komoto_ryota</sys_created_by>
+            <sys_created_on>2026-01-21 02:15:51</sys_created_on>
+            <sys_id>d5ad1f3183a27e10470dcbc6feaad374</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_1813832_1_affiliation" sys_domain="global" view="Default view">42b532a5832eba10470dcbc6feaad3fb</sys_ui_section>
+            <sys_updated_by>admin_komoto_ryota</sys_updated_by>
+            <sys_updated_on>2026-01-21 02:15:51</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>active</element>
+            <position>6</position>
+            <sys_created_by>admin_komoto_ryota</sys_created_by>
+            <sys_created_on>2026-01-21 02:15:52</sys_created_on>
+            <sys_id>95ad1f3183a27e10470dcbc6feaad382</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_1813832_1_affiliation" sys_domain="global" view="Default view">42b532a5832eba10470dcbc6feaad3fb</sys_ui_section>
+            <sys_updated_by>admin_komoto_ryota</sys_updated_by>
+            <sys_updated_on>2026-01-21 02:15:52</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>position_name</element>
+            <position>7</position>
+            <sys_created_by>admin_komoto_ryota</sys_created_by>
+            <sys_created_on>2026-01-21 02:15:52</sys_created_on>
+            <sys_id>d1ad1f3183a27e10470dcbc6feaad3a9</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_1813832_1_affiliation" sys_domain="global" view="Default view">42b532a5832eba10470dcbc6feaad3fb</sys_ui_section>
+            <sys_updated_by>admin_komoto_ryota</sys_updated_by>
+            <sys_updated_on>2026-01-21 02:15:52</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>start_date</element>
+            <position>8</position>
+            <sys_created_by>admin_komoto_ryota</sys_created_by>
+            <sys_created_on>2026-01-21 02:15:52</sys_created_on>
+            <sys_id>15ad1f3183a27e10470dcbc6feaad3b7</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_1813832_1_affiliation" sys_domain="global" view="Default view">42b532a5832eba10470dcbc6feaad3fb</sys_ui_section>
+            <sys_updated_by>admin_komoto_ryota</sys_updated_by>
+            <sys_updated_on>2026-01-21 02:15:52</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>end_date</element>
+            <position>9</position>
+            <sys_created_by>admin_komoto_ryota</sys_created_by>
+            <sys_created_on>2026-01-21 02:15:52</sys_created_on>
+            <sys_id>d5ad1f3183a27e10470dcbc6feaad3c5</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_1813832_1_affiliation" sys_domain="global" view="Default view">42b532a5832eba10470dcbc6feaad3fb</sys_ui_section>
+            <sys_updated_by>admin_komoto_ryota</sys_updated_by>
+            <sys_updated_on>2026-01-21 02:15:52</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>auth_position_name</element>
+            <position>10</position>
+            <sys_created_by>admin_komoto_ryota</sys_created_by>
+            <sys_created_on>2026-01-21 02:15:52</sys_created_on>
+            <sys_id>1dad1f3183a27e10470dcbc6feaad3d3</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_1813832_1_affiliation" sys_domain="global" view="Default view">42b532a5832eba10470dcbc6feaad3fb</sys_ui_section>
+            <sys_updated_by>admin_komoto_ryota</sys_updated_by>
+            <sys_updated_on>2026-01-21 02:15:52</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>integrate_date</element>
+            <position>11</position>
+            <sys_created_by>admin_komoto_ryota</sys_created_by>
+            <sys_created_on>2026-01-21 02:15:52</sys_created_on>
+            <sys_id>a9ad1f3183a27e10470dcbc6feaad3ee</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_1813832_1_affiliation" sys_domain="global" view="Default view">42b532a5832eba10470dcbc6feaad3fb</sys_ui_section>
+            <sys_updated_by>admin_komoto_ryota</sys_updated_by>
+            <sys_updated_on>2026-01-21 02:15:52</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>job_grade</element>
+            <position>12</position>
+            <sys_created_by>admin_komoto_ryota</sys_created_by>
+            <sys_created_on>2026-01-21 02:15:52</sys_created_on>
+            <sys_id>e1ad1f3183a27e10470dcbc6feaad3fd</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_1813832_1_affiliation" sys_domain="global" view="Default view">42b532a5832eba10470dcbc6feaad3fb</sys_ui_section>
+            <sys_updated_by>admin_komoto_ryota</sys_updated_by>
+            <sys_updated_on>2026-01-21 02:15:52</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>affiliation_code_string</element>
+            <position>13</position>
+            <sys_created_by>admin_komoto_ryota</sys_created_by>
+            <sys_created_on>2026-01-21 02:15:53</sys_created_on>
+            <sys_id>65ad5f3183a27e10470dcbc6feaad318</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_1813832_1_affiliation" sys_domain="global" view="Default view">42b532a5832eba10470dcbc6feaad3fb</sys_ui_section>
+            <sys_updated_by>admin_komoto_ryota</sys_updated_by>
+            <sys_updated_on>2026-01-21 02:15:53</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>department_name</element>
+            <position>14</position>
+            <sys_created_by>admin_komoto_ryota</sys_created_by>
+            <sys_created_on>2026-01-21 02:15:53</sys_created_on>
+            <sys_id>69ad5f3183a27e10470dcbc6feaad333</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_1813832_1_affiliation" sys_domain="global" view="Default view">42b532a5832eba10470dcbc6feaad3fb</sys_ui_section>
+            <sys_updated_by>admin_komoto_ryota</sys_updated_by>
+            <sys_updated_on>2026-01-21 02:15:53</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>employee_number</element>
+            <position>15</position>
+            <sys_created_by>admin_komoto_ryota</sys_created_by>
+            <sys_created_on>2026-01-21 02:15:53</sys_created_on>
+            <sys_id>29ad5f3183a27e10470dcbc6feaad342</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_1813832_1_affiliation" sys_domain="global" view="Default view">42b532a5832eba10470dcbc6feaad3fb</sys_ui_section>
+            <sys_updated_by>admin_komoto_ryota</sys_updated_by>
+            <sys_updated_on>2026-01-21 02:15:53</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_section action="INSERT_OR_UPDATE">
+            <caption/>
+            <header>false</header>
+            <name>x_1813832_1_affiliation</name>
+            <roles/>
+            <sys_class_name>sys_ui_section</sys_class_name>
+            <sys_created_by>admin_komoto_ryota</sys_created_by>
+            <sys_created_on>2026-01-20 04:42:57</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>42b532a5832eba10470dcbc6feaad3fb</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_1813832_1_affiliation</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="人事異動申請" source="x_1813832_1">e102d102831eb610470dcbc6feaad3ae</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="人事異動申請">e102d102831eb610470dcbc6feaad3ae</sys_scope>
+            <sys_update_name>sys_ui_section_42b532a5832eba10470dcbc6feaad3fb</sys_update_name>
+            <sys_updated_by>admin_komoto_ryota</sys_updated_by>
+            <sys_updated_on>2026-01-20 04:42:57</sys_updated_on>
+            <sys_user/>
+            <title>true</title>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_section>
+    </sys_ui_section>
+</record_update>

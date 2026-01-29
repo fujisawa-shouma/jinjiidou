@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_search_source">
+    <sys_search_source action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <condition table="x_1813832_1_department">active=true<item endquery="false" field="active" goto="false" newquery="false" operator="=" or="false" value="true"/>
+        </condition>
+        <group/>
+        <name>人事異動申請-WS - x_1813832_1_department</name>
+        <roles/>
+        <source_table>x_1813832_1_department</source_table>
+        <sys_class_name>sys_search_source</sys_class_name>
+        <sys_created_by>admin_komoto_ryota</sys_created_by>
+        <sys_created_on>2026-01-09 01:09:37</sys_created_on>
+        <sys_id>7d6b5906835eb610470dcbc6feaad3aa</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>人事異動申請-WS - x_1813832_1_department</sys_name>
+        <sys_package display_value="人事異動申請" source="x_1813832_1">e102d102831eb610470dcbc6feaad3ae</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="人事異動申請">e102d102831eb610470dcbc6feaad3ae</sys_scope>
+        <sys_update_name>sys_search_source_7d6b5906835eb610470dcbc6feaad3aa</sys_update_name>
+        <sys_updated_by>admin_komoto_ryota</sys_updated_by>
+        <sys_updated_on>2026-01-09 01:09:37</sys_updated_on>
+    </sys_search_source>
+</record_update>

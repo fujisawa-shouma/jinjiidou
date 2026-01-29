@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="user" label="User" language="en" table="x_1813832_1_user_rysids">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>user</element>
+            <help/>
+            <hint/>
+            <label>User</label>
+            <language>en</language>
+            <name>x_1813832_1_user_rysids</name>
+            <plural>Users</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>admin_komoto_ryota</sys_created_by>
+            <sys_created_on>2026-01-20 05:33:49</sys_created_on>
+            <sys_id>9f51072183aeba10470dcbc6feaad310</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>User</sys_name>
+            <sys_package display_value="人事異動申請" source="x_1813832_1">e102d102831eb610470dcbc6feaad3ae</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="人事異動申請">e102d102831eb610470dcbc6feaad3ae</sys_scope>
+            <sys_update_name>sys_documentation_x_1813832_1_user_rysids_user_en</sys_update_name>
+            <sys_updated_by>admin_komoto_ryota</sys_updated_by>
+            <sys_updated_on>2026-01-20 05:33:49</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

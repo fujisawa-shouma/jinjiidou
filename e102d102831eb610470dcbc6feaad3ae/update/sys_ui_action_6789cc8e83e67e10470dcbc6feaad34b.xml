@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ui_action">
+    <sys_ui_action action="INSERT_OR_UPDATE">
+        <action_name>act_request</action_name>
+        <active>true</active>
+        <client>true</client>
+        <client_script_v2><![CDATA[function onClick(g_form) {
+	console.debug("UI Action:Request: onClick()");
+	// debugger;
+	g_modal.confirm("ボタン押してね")
+	.then(ret => {
+		// はい 選択時
+		// alert("ボタン押したよ");
+		console.debug("ret=", ret); // true
+		g_form.submit("act_request");
+	})
+	.catch(err => {
+		// alert("テスト2");
+		// いいえ、クローズアイコン選択時
+		console.error(err);
+		});
+}]]></client_script_v2>
+        <comments/>
+        <condition/>
+        <form_action>true</form_action>
+        <form_button>true</form_button>
+        <form_button_v2>true</form_button_v2>
+        <form_context_menu>false</form_context_menu>
+        <form_link>false</form_link>
+        <form_menu_button_v2>false</form_menu_button_v2>
+        <form_style>primary</form_style>
+        <format_for_configurable_workspace>true</format_for_configurable_workspace>
+        <hint/>
+        <isolate_script>true</isolate_script>
+        <list_action>false</list_action>
+        <list_banner_button>false</list_banner_button>
+        <list_button>false</list_button>
+        <list_choice>false</list_choice>
+        <list_context_menu>false</list_context_menu>
+        <list_link>false</list_link>
+        <list_save_with_form_button>false</list_save_with_form_button>
+        <list_style/>
+        <messages/>
+        <name>Request</name>
+        <onclick>actRequest()</onclick>
+        <order>100</order>
+        <script><![CDATA[// ↓Conditionに入れる
+// current.canWrite() && current.state == Const.STATE.OPEN  && current.stage == Const.STAGE.WAIT_REQUEST
+
+function actRequest(is_destructive) {
+	// 入力されていない必須項目がある場合はreturn
+	alert('テスト');
+	if (!g_form.mandatoryCheck()) return;
+	g_user.bnc.confirm(getMessage("Confirmation"), getMessage("Are you sure to request?"), {
+		titleOk: "Request",
+		titleCancel: "No",
+		funcOk: function () {
+			gsftSubmit(null, g_form.getFormElement(), "act_request");
+		},
+	});
+}
+// gs.addErrorMessage('テスト3');
+/**
+ * サーバー処理
+ */
+if (typeof window == "undefined") {
+	// var log = new global.GSLog(gs.getCurrentScopeName() + ".LogLevel", "Request");
+	// (() => {
+	// 	let info = getUserInfo();
+	// 	if (!info) {
+	// 		gs.addErrorMessage(gs.getMessage("Failed to request because your have no affiliation.") + "<br>" + "Please set your Affiliation from User Profile Menu.");
+	// 		current.setAbortAction(true);
+	// 		action.setRedirectURL(current);
+	// 		return;
+	// 	}
+
+		current.state = Const.STATE.WIP;
+		current.is_remand = false;
+		current.is_regain = false;
+
+		current.details = action.getURLParameter("test");
+		current.dept_code = action.getURLParameter("dept_code");
+
+		// var comms = new ApprovalUtils()._buildComments(current, current.user_input.toString(), "requested");
+		var comms = "test";
+		current.comments = comms;
+		// current.comments = `起票者：${current.opened_by.u_name_ja}
+		// 所属：${info.dept_fullname}
+		// コメント：${current.user_input}`;
+
+		current.update();
+
+		runSubFlow();
+		action.setRedirectURL(current);
+		// gs.addInfoMessage(gs.getMessage("Requested") + "：" + current.getLabel() + "：" + current.number);
+		gs.addInfoMessage(gs.getMessage("Requested approval for {0}", current.number));
+		// gs.eventQueue(gs.getCurrentScopeName() + ".approval_request", current, current.stage);
+
+// 	})();
+}
+
+function runSubFlow() {
+	log.debug("runSubFlow(): start");
+	try {
+		var inputs = {};
+		inputs['record'] = current; // GlideRecord of table: x_khi_z1_orggmgr_bulk_personnel 
+
+		// Start Asynchronously: Uncomment to run in background. Code snippet will not have access to outputs.
+		// sn_fd.FlowAPI.getRunner().subflow('x_khi_z1_orggmgr.sub_single_approval').inBackground().withInputs(inputs).run();
+
+		// Execute Synchronously: Run in foreground. Code snippet has access to outputs.
+		var result = sn_fd.FlowAPI.getRunner().subflow('x_1813832_1_persona_change_req.main_approval_request_for_base_table').inForeground().withInputs(inputs).run();
+		var outputs = result.getOutputs();
+
+		// Get Outputs:
+		// Note: outputs can only be retrieved when executing synchronously.
+		var status = outputs['status']; // Choice
+		log.debug("status=" + status);
+
+	} catch (ex) {
+		var message = ex.getMessage();
+		gs.error(message);
+		log.error(message);
+	}
+}
+
+// ここで呼び出しているかも
+function getUserInfo() {
+	let info = new UserUtils().getUserInfo();
+	if (info && info.affiliation_code)
+		return info;
+
+	global.JSUtil.logObject(info);
+	return;
+}
+function setOpenedByInfo(rec, info) {
+
+}
+
+function debug(msg) {
+	if (gs.getProperty(gs.getCurrentScopeName() + '.LogLevel') != "debug") return;
+	gs.addInfoMessage("[Debug] " + gs.getMessage(msg));
+}]]></script>
+        <show_insert>true</show_insert>
+        <show_multiple_update>false</show_multiple_update>
+        <show_query>false</show_query>
+        <show_update>true</show_update>
+        <sys_class_name>sys_ui_action</sys_class_name>
+        <sys_created_by>admin_komoto_ryota</sys_created_by>
+        <sys_created_on>2026-01-21 05:41:51</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>6789cc8e83e67e10470dcbc6feaad34b</sys_id>
+        <sys_mod_count>36</sys_mod_count>
+        <sys_name>Request</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="人事異動申請" source="x_1813832_1">e102d102831eb610470dcbc6feaad3ae</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="人事異動申請">e102d102831eb610470dcbc6feaad3ae</sys_scope>
+        <sys_update_name>sys_ui_action_6789cc8e83e67e10470dcbc6feaad34b</sys_update_name>
+        <sys_updated_by>admin_fujisawa_shouma</sys_updated_by>
+        <sys_updated_on>2026-01-22 08:56:52</sys_updated_on>
+        <table>x_1813832_1_persona_change_req</table>
+        <ui11_compatible>true</ui11_compatible>
+        <ui16_compatible>false</ui16_compatible>
+    </sys_ui_action>
+</record_update>

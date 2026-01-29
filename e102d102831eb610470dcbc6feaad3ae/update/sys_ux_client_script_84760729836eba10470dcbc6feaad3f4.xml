@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ux_client_script">
+    <sys_ux_client_script action="INSERT_OR_UPDATE">
+        <controller_preset/>
+        <includes/>
+        <macroponent display_value="Record Default">335b15067e5eb6101cab106f44eec565</macroponent>
+        <name>Employee - Selected Item</name>
+        <preset/>
+        <required_translations>[]</required_translations>
+        <script><![CDATA[/**
+ * @param {params} params
+ * @param {api} params.api
+ * @param {any} params.event
+ * @param {any} params.imports
+ * @param {ApiHelpers} params.helpers
+ */
+function handler({
+    api,
+    event,
+    helpers,
+    imports
+}) {
+    console.debug(">>>Employee - Selected Item:\n", event.name);
+    // const produce = imports["x_1813832_1.immer"]().produce;
+
+    const item = event.context.item.value;
+    const idx = event.context.item.index;
+    // ↓detailのレコードをコピーして取得
+    // json形式のデータを取得
+    // console.warn(records.);
+
+
+
+
+
+    item.employee.value = event.payload.value;
+    // ↓でユーザーID取得できる。
+    item.employee.displayValue = event.payload.item.label;
+    const test = event.payload.item.label;
+    item.employee.selected = true;
+    // item.employee.item = event.payload.item;
+
+
+    const subLabels = event.payload.item.sublabel.split("|");
+    // console.warn(event.payload.item.label);
+    const employee_number = subLabels[0];
+    const employee_name = subLabels[1];
+    const employee_title = subLabels[2];
+    const department_name = subLabels[3];
+
+    // 従業員番号
+    item.employee_number.value = subLabels[0];
+    item.employee_number.displayValue = subLabels[0];
+    // 氏名
+    item.employee_name.value = subLabels[1];
+    item.employee_name.displayValue = subLabels[1];
+
+    item.old_title.value = employee_title;
+    item.old_title.displayValue = employee_title;
+
+    item.old_dept.value = department_name;
+    item.old_dept.displayValue = department_name;
+
+    console.debug(">>>Employee - Selected Item", "CSPデータをクリア");
+    // api.setState("listGaudi", []);
+    // api.setState("queryGaudi", "");
+    // api.setState("inputValue", "");
+
+    api.data.look_up_user.refresh();
+
+    // let testArray = [];
+    // console.warn(testArray);
+
+    // for (let i = 0; i < records.length; i++) {
+    //     console.warn(records[i][0]);
+    // }
+    // for (let i = 0; i < records.length; i++) {
+    //     console.warn[i];
+    //     testArray[i].push(records[i].employee.displayValue);
+    // }
+
+    // let records = structuredClone(api.state.records);
+    // console.warn(records.length);
+    // let testArray = [];
+    let userId = event.payload.item.label;
+    console.warn(userId);
+    api.setState("userId", userId);
+    api.setState("num", idx);
+    // api.data.look_up_affiliation.refresh();
+    
+    const dept = api.data.look_up_affiliation.results();
+    console.warn(dept);
+    item.old_dept.value = dept;
+    item.old_dept.displayValue = dept;
+
+    const grade = api.data.look_up_affiliation.results();
+    console.warn("gradeの結果");
+    console.warn(grade);
+    item.old_title.value = grade;
+    item.old_title.displayValue = grade;
+
+
+    // for (let i = 0; i < records.length; i++) {
+    //     // testArray.push(records[i].employee.displayValue);
+    //     console.warn(i);
+    //     userId = records[i].employee.displayValue;
+    //     console.warn(userId);
+    //     api.setState("userId", userId);
+    //     api.setState("num", i);
+    //     api.data.look_up_affiliation.execute();
+    // }
+
+
+    // console.warn[testArray];
+
+    // console.warn(testArray);
+    // api.setState("userId", testArray);
+    // console.warn("userId");
+    // api.data.look_up_affiliation.execute();
+}]]></script>
+        <script_api_version>2.0.0</script_api_version>
+        <sys_class_name>sys_ux_client_script</sys_class_name>
+        <sys_created_by>admin_komoto_ryota</sys_created_by>
+        <sys_created_on>2026-01-20 06:33:12</sys_created_on>
+        <sys_id>84760729836eba10470dcbc6feaad3f4</sys_id>
+        <sys_mod_count>53</sys_mod_count>
+        <sys_name>Employee - Selected Item</sys_name>
+        <sys_package display_value="人事異動申請" source="x_1813832_1">e102d102831eb610470dcbc6feaad3ae</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="人事異動申請">e102d102831eb610470dcbc6feaad3ae</sys_scope>
+        <sys_update_name>sys_ux_client_script_84760729836eba10470dcbc6feaad3f4</sys_update_name>
+        <sys_updated_by>admin_komoto_ryota</sys_updated_by>
+        <sys_updated_on>2026-01-28 12:17:29</sys_updated_on>
+        <target>macroponent</target>
+        <type>default</type>
+    </sys_ux_client_script>
+</record_update>

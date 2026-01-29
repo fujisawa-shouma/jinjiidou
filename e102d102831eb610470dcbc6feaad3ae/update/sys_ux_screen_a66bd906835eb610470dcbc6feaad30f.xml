@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ux_screen">
+    <sys_ux_screen action="INSERT_OR_UPDATE">
+        <active>false</active>
+        <app_config display_value="人事異動申請-WS App Config">3b5b1506295eb6108cd658075f60f374</app_config>
+        <description/>
+        <disable_auto_reflow>false</disable_auto_reflow>
+        <disable_interoperable>false</disable_interoperable>
+        <event_mappings/>
+        <macroponent display_value="Department Record Page">666bd906835eb610470dcbc6feaad305</macroponent>
+        <macroponent_config/>
+        <name>Department Record Page</name>
+        <order>100</order>
+        <parent_macroponent display_value="Workspace App Shell">c276387cc331101080d6d3658940ddd2</parent_macroponent>
+        <required_translations>[ ]</required_translations>
+        <rollback_screen/>
+        <screen_condition>table=x_1813832_1_department</screen_condition>
+        <screen_type display_value="Record">3b5b1506d25eb610e08fedf36c15ff69</screen_type>
+        <sys_class_name>sys_ux_screen</sys_class_name>
+        <sys_created_by>admin_komoto_ryota</sys_created_by>
+        <sys_created_on>2026-01-09 01:09:40</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>a66bd906835eb610470dcbc6feaad30f</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Department Record Page</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="人事異動申請" source="x_1813832_1">e102d102831eb610470dcbc6feaad3ae</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="人事異動申請">e102d102831eb610470dcbc6feaad3ae</sys_scope>
+        <sys_update_name>sys_ux_screen_a66bd906835eb610470dcbc6feaad30f</sys_update_name>
+        <sys_updated_by>admin_fujisawa_shouma</sys_updated_by>
+        <sys_updated_on>2026-01-22 08:14:17</sys_updated_on>
+    </sys_ux_screen>
+    <sys_translated_text action="delete_multiple" query="documentkey=a66bd906835eb610470dcbc6feaad30f"/>
+    <sys_translated_text action="INSERT_OR_UPDATE">
+        <documentkey>a66bd906835eb610470dcbc6feaad30f</documentkey>
+        <fieldname>description</fieldname>
+        <language>ja</language>
+        <sys_created_by>admin_fujisawa_shouma</sys_created_by>
+        <sys_created_on>2026-01-22 08:14:18</sys_created_on>
+        <sys_id>ed49391e83e63250470dcbc6feaad36b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin_fujisawa_shouma</sys_updated_by>
+        <sys_updated_on>2026-01-22 08:14:18</sys_updated_on>
+        <tablename>sys_ux_screen</tablename>
+        <value/>
+    </sys_translated_text>
+</record_update>

@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_1813832_1.ApprovalUtils</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <mobile_callable>false</mobile_callable>
+        <name>ApprovalUtils</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var ApprovalUtils = Class.create();
+ApprovalUtils.prototype = {
+	initialize: function () {
+		this.log = new global.GSLog(gs.getCurrentScopeName() + ".LogLevel", this.type);
+		this.error = false;
+
+		// ユーザー情報の取得
+		this.userInfo = new UserUtils().getUserInfo();
+		if (!this.userInfo || !this.userInfo.dept_name) {
+			// 所属選択していないか、所属コードが不明な場合
+			gs.addErrorMessage(gs.getMessage("Failed to request because your have no affiliation.") + "<br>" + "Please set your Affiliation from User Profile Menu.");
+			this.error = true;
+			return;
+		}
+	},
+	/**
+	 * 承認処理
+	 */
+	approve: function (current) {
+		if (this.error) return;
+		if (current.isActionAborted()) return;
+		if (!current.canWrite()) return;
+
+		var currentUser = gs.getUserID();
+		var baseRecord = current;
+		var recApproval = this.getApprovalRcord(currentUser, baseRecord);
+		if (recApproval) {
+			recApproval.state = "approved";
+			var comms = this._buildComments(current, current.approval_comments.toString(), "approved");
+			recApproval.comments = comms;
+			recApproval.update();
+			// 承認レコードの更新が失敗(承認ポリシーでNGになった場合は、終了する）
+			if (recApproval.isActionAborted()) {
+				this.log.debug("Abort Action: recApproval");
+				return;
+			}
+
+			current.comments = comms;
+			current.approval_comments = "";
+			return current.update();
+		}
+		return false;
+	},
+	/**
+	 * 却下処理
+	 */
+	reject: function (current) {
+		if (this.error) return;
+		if (current.isActionAborted()) return;
+		if (!current.canWrite()) return;
+
+		var currentUser = gs.getUserID();
+		var baseRecord = current;
+		var recApproval = this.getApprovalRcord(currentUser, baseRecord);
+		if (recApproval) {
+			recApproval.state = "rejected";
+			var comms = this._buildComments(current, current.approval_comments.toString(), "rejected");
+			recApproval.comments = comms;
+			recApproval.update();
+			// // 承認レコードの更新が失敗(承認ポリシーでNGになった場合は、終了する）
+			// if (recApproval.isActionAborted()) return;
+			// this.log.debug("recApproval.isActionAborted()? " + recApproval.isActionAborted());
+			// this.log.debug("Reject comments=" + current.approval_comments.toString());
+			current.comments = comms;
+			current.approval_comments = "";
+			current.state = Const.STATE.CLOSE_INCOMPLETE;
+			current.stage = Const.STAGE.COMPLETE;
+			current.assigned_to = "NULL";
+			return current.update();
+		}
+		return false;
+	},
+	/**
+	 * 差戻処理
+	 */
+	remand: function (current) {
+		if (this.error) return;
+		if (!current.canWrite()) return;
+
+		current.is_remand = true;
+		current.update();
+		if (current.isActionAborted()) return;
+
+		var currentUser = gs.getUserID();
+		var baseRecord = current;
+		var recApproval = this.getApprovalRcord(currentUser, baseRecord);
+		if (recApproval) {
+			recApproval.state = "rejected";
+			var comms = this._buildComments(current, current.approval_comments.toString(), "remanded");
+			recApproval.comments = comms;
+			recApproval.update();
+			// // 承認レコードの更新が失敗(承認ポリシーでNGになった場合は、終了する）
+			// if (recApproval.isActionAborted()) return;
+
+			current.comments = comms;
+			current.approval_comments = "";
+			// current.is_remand = true;
+			current.state = Const.STATE.OPEN;
+			current.stage = Const.STAGE.WAIT_REQUEST;
+			current.assigned_to = current.opened_by;
+
+			return current.update();
+		}
+		return false;
+	},
+	/**
+	 * アサインされている要求待ちの承認レコードを取得する
+	 */
+	getApprovalRcord: function (approver, base_record) {
+		var gr = new GlideRecord('sysapproval_approver');
+		gr.addEncodedQuery("approver=" + approver + "^sysapproval=" + base_record.sys_id + "^state=requested");
+		gr.orderBy("sys_updated_by");
+		this.log.debug("Query=" + gr.getEncodedQuery());
+		gr.query();
+		this.log.debug("Query Count=" + gr.getRowCount());
+		if (!gr.hasNext()) {
+			gs.addErrorMessage(gs.getMessage("No approval record found for user[{0}]", base_record.assigned_to.user_name));
+			return false;
+		}
+		while (gr.next()) {
+			if (!gr.canWrite()) {
+				gs.addErrorMessage("No Update Privilege for approval record.");
+				return false;
+			}
+			return gr;
+		}
+		return false;
+	},
+	/** 
+	 * アクティビティ出力用の承認者情報を作成する
+	 * @Param {GlideRecord} current：伝票レコード
+	 * @Param {String} act: Approve|Reject(default)|Remand
+	 * @Return {String} 出力する文字列
+	 *  (例)
+	 *      ステージ：要求待ち|1次承認待ち
+	 *      ステータス：起票｜承認｜却下｜差戻
+	 *      氏名：ユーザー100 開発者
+	 *      所属：ベニックソリューションカスタマーサービス本部
+	 *      役職：本部付け
+	 */
+	_buildComments: function (current, comments, act) {
+		act = act || "approve";
+
+		var text = "";
+		text += 'ステージ：' + current.stage.getDisplayValue() + ' - ' + gs.getMessage(act);
+		text += '\n状　　態：' + gs.getMessage(act);
+		text += '\n氏　　名：' + this.userInfo.name_ja + '[' + gs.getUserName() + ']';
+		text += '\n所　　属：' + this.userInfo.dept_fullname;
+		text += '\n役　　職：' + this.userInfo.position_name;
+		text += '\nコメント：' + (comments || 'なし');
+
+		return text;
+	},
+
+	type: 'ApprovalUtils'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin_komoto_ryota</sys_created_by>
+        <sys_created_on>2026-01-22 01:33:34</sys_created_on>
+        <sys_id>2c8d1c9a83aafe10470dcbc6feaad3f5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>ApprovalUtils</sys_name>
+        <sys_package display_value="人事異動申請" source="x_1813832_1">e102d102831eb610470dcbc6feaad3ae</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="人事異動申請">e102d102831eb610470dcbc6feaad3ae</sys_scope>
+        <sys_update_name>sys_script_include_2c8d1c9a83aafe10470dcbc6feaad3f5</sys_update_name>
+        <sys_updated_by>admin_komoto_ryota</sys_updated_by>
+        <sys_updated_on>2026-01-22 01:33:34</sys_updated_on>
+    </sys_script_include>
+</record_update>

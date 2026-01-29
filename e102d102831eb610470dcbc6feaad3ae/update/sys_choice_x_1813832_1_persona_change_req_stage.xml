@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_choice action="INSERT_OR_UPDATE" field="stage" table="x_1813832_1_persona_change_req" version="3">
+        <sys_choice_set action="INSERT_OR_UPDATE">
+            <element>stage</element>
+            <name>x_1813832_1_persona_change_req</name>
+            <sys_class_name>sys_choice_set</sys_class_name>
+            <sys_created_by>admin_komoto_ryota</sys_created_by>
+            <sys_created_on>2026-01-09 00:57:52</sys_created_on>
+            <sys_id>fdb8118e831eb610470dcbc6feaad3e0</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>stage</sys_name>
+            <sys_package display_value="人事異動申請" source="x_1813832_1">e102d102831eb610470dcbc6feaad3ae</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="人事異動申請">e102d102831eb610470dcbc6feaad3ae</sys_scope>
+            <sys_update_name>sys_choice_x_1813832_1_persona_change_req_stage</sys_update_name>
+            <sys_updated_by>admin_komoto_ryota</sys_updated_by>
+            <sys_updated_on>2026-01-09 00:57:52</sys_updated_on>
+        </sys_choice_set>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>stage</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Wait for request</label>
+            <language>en</language>
+            <name>x_1813832_1_persona_change_req</name>
+            <sequence>0</sequence>
+            <synonyms/>
+            <sys_created_by>admin_komoto_ryota</sys_created_by>
+            <sys_created_on>2026-01-09 00:57:52</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>f5b8118e831eb610470dcbc6feaad3e0</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin_komoto_ryota</sys_updated_by>
+            <sys_updated_on>2026-01-09 00:57:52</sys_updated_on>
+            <value>wait_for_request</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>stage</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Wait for Approer1</label>
+            <language>en</language>
+            <name>x_1813832_1_persona_change_req</name>
+            <sequence>1</sequence>
+            <synonyms/>
+            <sys_created_by>admin_komoto_ryota</sys_created_by>
+            <sys_created_on>2026-01-09 00:57:52</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>b1b8518e831eb610470dcbc6feaad308</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin_komoto_ryota</sys_updated_by>
+            <sys_updated_on>2026-01-09 00:57:52</sys_updated_on>
+            <value>wait_for_approer1</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>stage</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Wait for Approer2</label>
+            <language>en</language>
+            <name>x_1813832_1_persona_change_req</name>
+            <sequence>2</sequence>
+            <synonyms/>
+            <sys_created_by>admin_komoto_ryota</sys_created_by>
+            <sys_created_on>2026-01-09 00:57:52</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>bdb8518e831eb610470dcbc6feaad321</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin_komoto_ryota</sys_updated_by>
+            <sys_updated_on>2026-01-09 00:57:52</sys_updated_on>
+            <value>wait_for_approer2</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>stage</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Wait for Approer3</label>
+            <language>en</language>
+            <name>x_1813832_1_persona_change_req</name>
+            <sequence>3</sequence>
+            <synonyms/>
+            <sys_created_by>admin_komoto_ryota</sys_created_by>
+            <sys_created_on>2026-01-09 00:57:52</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>f1b8518e831eb610470dcbc6feaad32f</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin_komoto_ryota</sys_updated_by>
+            <sys_updated_on>2026-01-09 00:57:52</sys_updated_on>
+            <value>wait_for_approer3</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>stage</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Wait for Approer4</label>
+            <language>en</language>
+            <name>x_1813832_1_persona_change_req</name>
+            <sequence>4</sequence>
+            <synonyms/>
+            <sys_created_by>admin_komoto_ryota</sys_created_by>
+            <sys_created_on>2026-01-09 00:57:52</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>39b8518e831eb610470dcbc6feaad33c</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin_komoto_ryota</sys_updated_by>
+            <sys_updated_on>2026-01-09 00:57:52</sys_updated_on>
+            <value>wait_for_approer4</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>stage</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Wait for Approer5</label>
+            <language>en</language>
+            <name>x_1813832_1_persona_change_req</name>
+            <sequence>5</sequence>
+            <synonyms/>
+            <sys_created_by>admin_komoto_ryota</sys_created_by>
+            <sys_created_on>2026-01-09 00:57:52</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>7db8518e831eb610470dcbc6feaad349</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin_komoto_ryota</sys_updated_by>
+            <sys_updated_on>2026-01-09 00:57:52</sys_updated_on>
+            <value>wait_for_approer5</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>stage</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Completed</label>
+            <language>en</language>
+            <name>x_1813832_1_persona_change_req</name>
+            <sequence>6</sequence>
+            <synonyms/>
+            <sys_created_by>admin_komoto_ryota</sys_created_by>
+            <sys_created_on>2026-01-09 00:57:52</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>b1b8518e831eb610470dcbc6feaad357</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin_komoto_ryota</sys_updated_by>
+            <sys_updated_on>2026-01-09 00:57:52</sys_updated_on>
+            <value>completed</value>
+        </sys_choice>
+    </sys_choice>
+</record_update>

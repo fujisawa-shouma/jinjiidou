@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_list parent="" relationship="" sys_domain="global" table="x_1813832_1_user_rysids" version="2" view="sys_ref_list">
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>user.user_name</element>
+            <list_id display_value="x_1813832_1_user_rysids" element="NULL" name="x_1813832_1_user_rysids" parent="NULL" relationship="NULL" sys_domain="global" view="ed95814183213210470dcbc6feaad3ce">4f91e8ec837af610470dcbc6feaad34a</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>0</position>
+            <sum>false</sum>
+            <sys_created_by>admin_komoto_ryota</sys_created_by>
+            <sys_created_on>2026-01-29 01:37:37</sys_created_on>
+            <sys_id>0f91e8ec837af610470dcbc6feaad34b</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin_komoto_ryota</sys_updated_by>
+            <sys_updated_on>2026-01-29 01:37:37</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element/>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <name>x_1813832_1_user_rysids</name>
+            <parent/>
+            <position/>
+            <relationship/>
+            <sum>false</sum>
+            <sys_class_name>sys_ui_list</sys_class_name>
+            <sys_created_by>admin_komoto_ryota</sys_created_by>
+            <sys_created_on>2026-01-29 01:37:37</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>4f91e8ec837af610470dcbc6feaad34a</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_1813832_1_user_rysids</sys_name>
+            <sys_package display_value="人事異動申請" source="x_1813832_1">e102d102831eb610470dcbc6feaad3ae</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="人事異動申請">e102d102831eb610470dcbc6feaad3ae</sys_scope>
+            <sys_update_name>sys_ui_list_x_1813832_1_user_rysids_sys_ref_list</sys_update_name>
+            <sys_updated_by>admin_komoto_ryota</sys_updated_by>
+            <sys_updated_on>2026-01-29 01:37:37</sys_updated_on>
+            <sys_user/>
+            <view display_value="Reference List" name="sys_ref_list">ed95814183213210470dcbc6feaad3ce</view>
+            <view_name/>
+        </sys_ui_list>
+    </sys_ui_list>
+</record_update>

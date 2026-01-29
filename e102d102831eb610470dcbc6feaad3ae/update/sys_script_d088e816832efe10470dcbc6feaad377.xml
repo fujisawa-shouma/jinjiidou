@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script">
+    <sys_script action="INSERT_OR_UPDATE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>false</action_delete>
+        <action_insert>true</action_insert>
+        <action_query>false</action_query>
+        <action_update>true</action_update>
+        <active>true</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>x_1813832_1_persona_change_req</collection>
+        <condition/>
+        <description/>
+        <execute_function>false</execute_function>
+        <filter_condition/>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>Upsert Details</name>
+        <order>100</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
+	var log = new global.GSLog(gs.getCurrentScopeName() + ".LogLevel", "Upsert Details");
+
+	// 
+	var details = JSON.parse(current.details);
+	details.forEach((rec, order) => {
+		var gr = new GlideRecord("x_1813832_1_detail");
+		if(current.operation() == "insert") {
+			// log.debug("insert:[" + order + "]" + rec.guid);
+			insDetail(gr, rec, order);
+		}
+		else if(current.operation() == "update") {
+			// log.debug("update:[" + order + "]" + rec.guid);
+			gr.addQuery("bulk_personnel", current.getUniqueValue());
+			gr.addQuery("guid", rec.guid);
+			gr.query();
+			if(gr.hasNext()) {
+				gr.next();
+
+				setFields(gr, rec, order);
+				gr.update();
+			}
+			else {
+				// Insert
+				insDetail(gr, rec, order);
+			}
+		}
+
+		/**
+		 * 削除明細を反映
+		 */
+		var guidDetails = details.map(v => v.guid);
+		var gr = new GlideRecord("x_1813832_1_detail");
+		gr.addQuery("bulk_personnel", current.getUniqueValue());
+		gr.query();
+		while (gr.next()) {
+			var guid = gr.getValue('guid');
+			if (!guidDetails.includes(guid)) {
+				log.debug("Delete detail record: guid=" + guid);
+				gr.deleteRecord();
+			}
+		}
+
+
+	});
+	function insDetail(gr, rec, index) {
+		// log.debug("insDetail():index=" + index);
+		gr.initialize();
+		gr.bulk_personnel = current.getUniqueValue();
+		gr.guid = rec.guid;
+		gr.setValue("order", index);
+
+		setFields(gr, rec, index);
+
+		gr.insert();
+	}
+	function setFields(gr, rec, order) {
+		gr.order = order + 1;
+		gr.category = rec.category;
+		/**
+		 * rec.dataは、'2025-09-23T00:00:00.000Z'の形式で格納されている
+		 * javascriptのDateオブジェクトをJSON形式にした場合、UTC時刻になっています。
+		 * 空白の場合、nullになっており、そのままだとエラーになるので、空白にしている(issue_dateはEmptyになります)
+		 */
+		gr.issue_date = new GlideDateTime(rec.date != null ? rec.date : "");
+		gr.employee_number = rec.empNumber;
+		gr.employee = rec.name.value;
+		gr.employee_name = rec.name_ja;
+		// 部門
+		gr.dept_id1 = rec.newAffi.value;
+		gr.dept_name1 = rec.newAffi.displayValue;
+		// rec.subAffi.forEach((subAffi, i) => {
+		// 	gr["dept_id" + (i + 2)] = subAffi.value;
+		// 	gr["dept_name" + (i + 2)] = subAffi.displayValue;
+		// });
+		for (var i = 0; i < 5; i++) {
+			log.debug("i=" + i);
+			log.debug("rec.subAffi=" + JSON.stringify(rec.subAffi));
+			if (i < rec.subAffi.length) {
+				gr["dept_id" + (i + 2)] = rec.subAffi[i].value;
+				gr["dept_name" + (i + 2)] = rec.subAffi[i].displayValue;
+			} else {
+				gr["dept_id" + (i + 2)] = "";
+				gr["dept_name" + (i + 2)] = "";
+			}
+		} 
+
+		gr.title_id = rec.newTitle.value;				// 役職
+		gr.title_name = rec.newTitle.displayValue;
+		gr.appodismiss = rec.appoDismiss;
+		gr.direct = rec.newDirect;
+		gr.location_id = rec.newLocation.value;
+		gr.location_name = rec.newLocation.displayValue;
+		gr.job_grade_id = rec.job_grade.value;
+		gr.job_grade_name = rec.job_grade.displayValue;
+		gr.role_grade_id = rec.role_grade.value;
+		gr.role_grade_name = rec.role_grade.displayValue;
+		gr.vu_id = rec.vu.value;
+		gr.vu_name = rec.vu.displayValue;
+
+		gr.opt1 = rec.opt1;
+		gr.opt2 = rec.opt2;
+		gr.opt3 = rec.opt3;
+		gr.opt4 = rec.opt4;
+		gr.opt5 = rec.opt5;
+
+		gr.old_title = rec.oldTitle;
+		gr.old_location = rec.oldLocation;
+		gr.old_dept = rec.oldAffi;
+		gr.old_direct = rec.oldDirect;
+		gr.old_job_grade = rec.oldJobGrade;
+		gr.old_role_grade = rec.oldRoleGrade;
+		gr.old_vu = rec.oldVu;
+
+	}
+})(current, previous);]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>admin_komoto_ryota</sys_created_by>
+        <sys_created_on>2026-01-22 02:32:59</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>d088e816832efe10470dcbc6feaad377</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Upsert Details</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="人事異動申請" source="x_1813832_1">e102d102831eb610470dcbc6feaad3ae</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="人事異動申請">e102d102831eb610470dcbc6feaad3ae</sys_scope>
+        <sys_update_name>sys_script_d088e816832efe10470dcbc6feaad377</sys_update_name>
+        <sys_updated_by>admin_komoto_ryota</sys_updated_by>
+        <sys_updated_on>2026-01-22 04:03:19</sys_updated_on>
+        <template/>
+        <when>after</when>
+    </sys_script>
+    <sys_translated_text action="delete_multiple" query="documentkey=d088e816832efe10470dcbc6feaad377"/>
+</record_update>

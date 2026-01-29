@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ux_screen">
+    <sys_ux_screen action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <app_config display_value="人事異動申請-WS App Config">3b5b1506295eb6108cd658075f60f374</app_config>
+        <description/>
+        <disable_auto_reflow>false</disable_auto_reflow>
+        <disable_interoperable>false</disable_interoperable>
+        <event_mappings/>
+        <macroponent display_value="Knowledge View">3094297373311010b29f2e46fbf6a7a1</macroponent>
+        <macroponent_config>{&#13;
+  "label" : "",&#13;
+  "bare" : true,&#13;
+  "scrollable" : "y",&#13;
+  "headerLevel" : "1",&#13;
+  "interceptNotifications" : false,&#13;
+  "propagateNotifications" : false,&#13;
+  "views" : "",&#13;
+  "selectedTabIndex" : 0,&#13;
+  "table" : "",&#13;
+  "sysId" : ""&#13;
+}</macroponent_config>
+        <name>KB default</name>
+        <order>0</order>
+        <parent_macroponent display_value="Workspace App Shell">c276387cc331101080d6d3658940ddd2</parent_macroponent>
+        <required_translations>[]</required_translations>
+        <rollback_screen/>
+        <screen_condition/>
+        <screen_type display_value="KB">3b5b1506a65eb6100d7977a3da135e64</screen_type>
+        <sys_class_name>sys_ux_screen</sys_class_name>
+        <sys_created_by>admin_komoto_ryota</sys_created_by>
+        <sys_created_on>2026-01-09 01:09:29</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>3f5b15064c5eb6101d22430104ce895e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>KB default</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="人事異動申請" source="x_1813832_1">e102d102831eb610470dcbc6feaad3ae</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="人事異動申請">e102d102831eb610470dcbc6feaad3ae</sys_scope>
+        <sys_update_name>sys_ux_screen_3f5b15064c5eb6101d22430104ce895e</sys_update_name>
+        <sys_updated_by>admin_komoto_ryota</sys_updated_by>
+        <sys_updated_on>2026-01-09 01:09:29</sys_updated_on>
+    </sys_ux_screen>
+    <sys_translated_text action="delete_multiple" query="documentkey=3f5b15064c5eb6101d22430104ce895e"/>
+</record_update>
