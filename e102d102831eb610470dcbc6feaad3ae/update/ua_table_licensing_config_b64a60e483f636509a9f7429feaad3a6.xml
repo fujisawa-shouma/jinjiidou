@@ -4,22 +4,22 @@
         <license_condition/>
         <license_model>none</license_model>
         <license_roles/>
-        <name>x_1813832_1_affiliation</name>
+        <name>x_1813832_1_persona_change_req</name>
         <op_delete>true</op_delete>
         <op_insert>true</op_insert>
         <op_update>true</op_update>
         <owner_condition/>
         <sys_class_name>ua_table_licensing_config</sys_class_name>
         <sys_created_by>admin_komoto_ryota</sys_created_by>
-        <sys_created_on>2026-01-20 04:42:07</sys_created_on>
-        <sys_id>8a853a65832eba10470dcbc6feaad316</sys_id>
+        <sys_created_on>2026-01-09 00:33:09</sys_created_on>
+        <sys_id>b64a60e483f636509a9f7429feaad3a6</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name>x_1813832_1_affiliation</sys_name>
+        <sys_name>x_1813832_1_persona_change_req</sys_name>
         <sys_package display_value="人事異動申請" source="x_1813832_1">e102d102831eb610470dcbc6feaad3ae</sys_package>
         <sys_policy/>
         <sys_scope display_value="人事異動申請">e102d102831eb610470dcbc6feaad3ae</sys_scope>
-        <sys_update_name>ua_table_licensing_config_8a853a65832eba10470dcbc6feaad316</sys_update_name>
+        <sys_update_name>ua_table_licensing_config_b64a60e483f636509a9f7429feaad3a6</sys_update_name>
         <sys_updated_by>admin_komoto_ryota</sys_updated_by>
-        <sys_updated_on>2026-01-20 04:42:07</sys_updated_on>
+        <sys_updated_on>2026-01-09 00:33:09</sys_updated_on>
     </ua_table_licensing_config>
 </record_update>

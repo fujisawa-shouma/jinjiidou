@@ -2,7 +2,7 @@
     <sys_dictionary action="INSERT_OR_UPDATE" element="affiliation_code" table="x_1813832_1_affiliation">
         <active>true</active>
         <array>false</array>
-        <attributes/>
+        <attributes>edge_encryption_enabled=true,encode_utf8=false</attributes>
         <audit>false</audit>
         <calculation><![CDATA[(function calculatedFieldValue(current) {
 
@@ -52,7 +52,6 @@
         <sys_class_name>sys_dictionary</sys_class_name>
         <sys_created_by>admin_komoto_ryota</sys_created_by>
         <sys_created_on>2026-01-21 02:15:51</sys_created_on>
-        <sys_id>99db17b983627e10470dcbc6feaad393</sys_id>
         <sys_name>Affiliation Code</sys_name>
         <sys_package display_value="人事異動申請" source="x_1813832_1">e102d102831eb610470dcbc6feaad3ae</sys_package>
         <sys_policy/>

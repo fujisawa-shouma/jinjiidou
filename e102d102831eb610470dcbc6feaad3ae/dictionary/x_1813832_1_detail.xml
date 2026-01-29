@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="20acfff183a67e10470dcbc6feaad3dd" label="Detail" max_length="40" name="x_1813832_1_detail" type="collection">
+        <element label="Position Name5" max_length="40" name="position_name5" type="string"/>
+        <element label="GUID" max_length="40" name="guid" type="string"/>
+        <element label="Department ID6" max_length="40" name="department_id6" type="string"/>
+        <element label="Tanto5" max_length="40" name="tanto5" type="string"/>
+        <element label="Opt4" max_length="40" name="opt4" type="string"/>
+        <element label="Issue Date" max_length="40" name="issue_date" type="glide_date_time"/>
+        <element label="Opt3" max_length="40" name="opt3" type="string"/>
+        <element label="Old Direct" max_length="40" name="old_direct" type="string"/>
+        <element label="Job Grade Name" max_length="40" name="job_grade_name" type="string"/>
+        <element label="Opt1" max_length="40" name="opt1" type="string"/>
+        <element label="Old Title" max_length="40" name="old_title" type="string"/>
+        <element label="Tanto6" max_length="40" name="tanto6" type="string"/>
+        <element label="Position6" max_length="40" name="position6" type="string"/>
+        <element attributes="edge_encryption_enabled=true,encode_utf8=false" label="Employee" max_length="32" name="employee" reference="x_1813832_1_user_rysids" type="reference"/>
+        <element label="Department Name6" max_length="255" name="department_name6" type="string"/>
+        <element label="Old Role Grade" max_length="40" name="old_role_grade" type="string"/>
+        <element label="Position Name6" max_length="40" name="position_name6" type="string"/>
+        <element label="Department Name2" max_length="255" name="department_name2" type="string"/>
+        <element label="Title Name" max_length="40" name="title_name" type="string"/>
+        <element label="Title ID" max_length="40" name="title_id" type="string"/>
+        <element label="Department ID2" max_length="40" name="department_id2" type="string"/>
+        <element label="Department ID1" max_length="40" name="department_id1" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Order" max_length="40" name="order" type="integer"/>
+        <element label="Department Name1" max_length="255" name="department_name1" type="string"/>
+        <element label="Old Vu" max_length="40" name="old_vu" type="string"/>
+        <element label="VU Name" max_length="40" name="vu_name" type="string"/>
+        <element label="Position3" max_length="40" name="position3" type="string"/>
+        <element label="Direct" max_length="40" name="direct" type="string"/>
+        <element label="Opt2" max_length="40" name="opt2" type="string"/>
+        <element label="Old Location" max_length="40" name="old_location" type="string"/>
+        <element label="Department Name3" max_length="255" name="department_name3" type="string"/>
+        <element label="Old Job Grade" max_length="40" name="old_job_grade" type="string"/>
+        <element label="AppoDismiss" max_length="40" name="appodismiss" type="string"/>
+        <element label="Role Grade Name" max_length="40" name="role_grade_name" type="string"/>
+        <element label="VU ID" max_length="40" name="vu_id" type="string"/>
+        <element label="Employee Number" max_length="40" name="employee_number" type="string"/>
+        <element label="Position Name4" max_length="40" name="position_name4" type="string"/>
+        <element label="Department ID3" max_length="40" name="department_id3" type="string"/>
+        <element label="Department ID4" max_length="40" name="department_id4" type="string"/>
+        <element label="Old Department" max_length="40" name="old_department" type="string"/>
+        <element label="Tanto1" max_length="40" name="tanto1" type="string"/>
+        <element label="Job Grade ID" max_length="40" name="job_grade_id" type="string"/>
+        <element label="Position Name3" max_length="40" name="position_name3" type="string"/>
+        <element label="Tanto2" max_length="40" name="tanto2" type="string"/>
+        <element label="Position4" max_length="40" name="position4" type="string"/>
+        <element label="Tanto3" max_length="40" name="tanto3" type="string"/>
+        <element label="Employee Name" max_length="40" name="employee_name" type="string"/>
+        <element label="Department ID5" max_length="40" name="department_id5" type="string"/>
+        <element label="Position2" max_length="40" name="position2" type="string"/>
+        <element label="Category" max_length="40" name="category" type="string"/>
+        <element label="Position1" max_length="40" name="position1" type="string"/>
+        <element label="Position5" max_length="40" name="position5" type="string"/>
+        <element label="Position Name1" max_length="40" name="position_name1" type="string"/>
+        <element label="Opt5" max_length="40" name="opt5" type="string"/>
+        <element label="Remarks" max_length="255" name="remarks" type="string"/>
+        <element label="Department Name4" max_length="255" name="department_name4" type="string"/>
+        <element label="Location ID" max_length="40" name="location_id" type="string"/>
+        <element label="Role Grade ID" max_length="40" name="role_grade_id" type="string"/>
+        <element attributes="edge_encryption_enabled=true,encode_utf8=false" label="Bulk Personnel" max_length="32" name="bulk_personnel" reference="x_1813832_1_persona_change_req" type="reference"/>
+        <element label="Location Name" max_length="40" name="location_name" type="string"/>
+        <element label="Tanto4" max_length="40" name="tanto4" type="string"/>
+        <element label="Position Name2" max_length="40" name="position_name2" type="string"/>
+        <element label="Department Name5" max_length="255" name="department_name5" type="string"/>
+        <index name="index">
+            <element name="bulk_personnel"/>
+        </index>
+        <index name="index2">
+            <element name="employee"/>
+        </index>
+    </element>
+</database>

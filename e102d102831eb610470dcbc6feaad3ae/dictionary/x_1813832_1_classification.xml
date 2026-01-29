@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="a358ca14832a3210470dcbc6feaad347" label="Classification" max_length="40" name="x_1813832_1_classification" type="collection">
+        <element label="Classification" max_length="40" name="classification" type="string"/>
+    </element>
+</database>

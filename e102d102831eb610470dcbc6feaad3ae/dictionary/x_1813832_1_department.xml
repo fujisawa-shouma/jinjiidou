@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="8f8a1182835eb610470dcbc6feaad348" label="Department" max_length="40" name="x_1813832_1_department" text_index="true" type="collection">
+        <element attributes="edge_encryption_enabled=true" label="Department Name 2" max_length="40" name="department_name_2" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Active" max_length="40" name="active" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Department Name 4" max_length="40" name="department_name_4" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Department Name 5" max_length="40" name="department_name_5" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Affiliation Code" max_length="40" name="affiliation_code" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Corporation Code" max_length="40" name="corporation_code" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Updated" max_length="40" name="updated" type="glide_date_time"/>
+        <element attributes="edge_encryption_enabled=true" display="true" label="Affiliation Short Name" max_length="40" name="affiliation_short_name" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Department Name 1" max_length="40" name="department_name_1" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Department Name 3" max_length="40" name="department_name_3" type="string"/>
+    </element>
+</database>

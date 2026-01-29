@@ -6,7 +6,6 @@
             <sys_class_name>sys_choice_set</sys_class_name>
             <sys_created_by>admin_komoto_ryota</sys_created_by>
             <sys_created_on>2026-01-27 07:12:28</sys_created_on>
-            <sys_id>a81b9777832eb210470dcbc6feaad346</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_name>short_description</sys_name>
             <sys_package display_value="人事異動申請" source="x_1813832_1">e102d102831eb610470dcbc6feaad3ae</sys_package>
@@ -30,7 +29,6 @@
             <sys_created_on>2026-01-27 07:12:27</sys_created_on>
             <sys_domain>global</sys_domain>
             <sys_domain_path>/</sys_domain_path>
-            <sys_id>101b9777832eb210470dcbc6feaad346</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>admin_komoto_ryota</sys_updated_by>
             <sys_updated_on>2026-01-27 07:12:27</sys_updated_on>
@@ -50,7 +48,6 @@
             <sys_created_on>2026-01-27 07:12:28</sys_created_on>
             <sys_domain>global</sys_domain>
             <sys_domain_path>/</sys_domain_path>
-            <sys_id>a01b9777832eb210470dcbc6feaad362</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>admin_komoto_ryota</sys_updated_by>
             <sys_updated_on>2026-01-27 07:12:28</sys_updated_on>
@@ -70,7 +67,6 @@
             <sys_created_on>2026-01-27 07:12:28</sys_created_on>
             <sys_domain>global</sys_domain>
             <sys_domain_path>/</sys_domain_path>
-            <sys_id>ac1b9777832eb210470dcbc6feaad37b</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>admin_komoto_ryota</sys_updated_by>
             <sys_updated_on>2026-01-27 07:12:28</sys_updated_on>
@@ -90,7 +86,6 @@
             <sys_created_on>2026-01-27 07:12:28</sys_created_on>
             <sys_domain>global</sys_domain>
             <sys_domain_path>/</sys_domain_path>
-            <sys_id>e01b9777832eb210470dcbc6feaad389</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>admin_komoto_ryota</sys_updated_by>
             <sys_updated_on>2026-01-27 07:12:28</sys_updated_on>
@@ -110,7 +105,6 @@
             <sys_created_on>2026-01-27 07:12:28</sys_created_on>
             <sys_domain>global</sys_domain>
             <sys_domain_path>/</sys_domain_path>
-            <sys_id>281b9777832eb210470dcbc6feaad396</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>admin_komoto_ryota</sys_updated_by>
             <sys_updated_on>2026-01-27 07:12:28</sys_updated_on>
@@ -130,7 +124,6 @@
             <sys_created_on>2026-01-27 07:12:28</sys_created_on>
             <sys_domain>global</sys_domain>
             <sys_domain_path>/</sys_domain_path>
-            <sys_id>6c1b9777832eb210470dcbc6feaad3a3</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>admin_komoto_ryota</sys_updated_by>
             <sys_updated_on>2026-01-27 07:12:28</sys_updated_on>
@@ -150,7 +143,6 @@
             <sys_created_on>2026-01-27 07:12:28</sys_created_on>
             <sys_domain>global</sys_domain>
             <sys_domain_path>/</sys_domain_path>
-            <sys_id>a01b9777832eb210470dcbc6feaad3b1</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>admin_komoto_ryota</sys_updated_by>
             <sys_updated_on>2026-01-27 07:12:28</sys_updated_on>
@@ -170,7 +162,6 @@
             <sys_created_on>2026-01-27 07:12:28</sys_created_on>
             <sys_domain>global</sys_domain>
             <sys_domain_path>/</sys_domain_path>
-            <sys_id>e41b9777832eb210470dcbc6feaad3be</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>admin_komoto_ryota</sys_updated_by>
             <sys_updated_on>2026-01-27 07:12:28</sys_updated_on>
@@ -190,7 +181,6 @@
             <sys_created_on>2026-01-27 07:12:28</sys_created_on>
             <sys_domain>global</sys_domain>
             <sys_domain_path>/</sys_domain_path>
-            <sys_id>2c1b9777832eb210470dcbc6feaad3cb</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>admin_komoto_ryota</sys_updated_by>
             <sys_updated_on>2026-01-27 07:12:28</sys_updated_on>
@@ -210,7 +200,6 @@
             <sys_created_on>2026-01-27 07:12:28</sys_created_on>
             <sys_domain>global</sys_domain>
             <sys_domain_path>/</sys_domain_path>
-            <sys_id>601b9777832eb210470dcbc6feaad3d9</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>admin_komoto_ryota</sys_updated_by>
             <sys_updated_on>2026-01-27 07:12:28</sys_updated_on>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="37035582831eb610470dcbc6feaad307" extends="task" label="人事異動申請" max_length="40" name="x_1813832_1_persona_change_req" text_index="true" type="collection">
+        <element attributes="edge_encryption_enabled=true,encode_utf8=false" label="Affiliation" max_length="32" name="affiliation" reference="cmn_department" type="reference"/>
+        <element attributes="edge_encryption_enabled=true,encode_utf8=false" label="Approver1" max_length="32" name="approver1" reference="sys_user" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Stage" max_length="40" name="stage" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Wait for Approer4" sequence="4" value="wait_for_approer4"/>
+                <element inactive_on_update="false" label="Wait for Approer5" sequence="5" value="wait_for_approer5"/>
+                <element inactive_on_update="false" label="Wait for Approer1" sequence="1" value="wait_for_approer1"/>
+                <element inactive_on_update="false" label="Completed" sequence="6" value="completed"/>
+                <element inactive_on_update="false" label="Wait for Approer2" sequence="2" value="wait_for_approer2"/>
+                <element inactive_on_update="false" label="Wait for Approer3" sequence="3" value="wait_for_approer3"/>
+                <element inactive_on_update="false" label="Wait for request" sequence="0" value="wait_for_request"/>
+            </choice>
+        </element>
+        <element label="Additional comments(Customer visible)" max_length="40" name="additional_comments_customer_visible" type="string"/>
+        <element label="Opened by Comments" max_length="100" name="opened_by_comments" type="string"/>
+        <element label="Approval Comments" max_length="40" name="approval_comments" type="string"/>
+        <element attributes="edge_encryption_enabled=true,encode_utf8=false" label="Approver5" max_length="32" name="approver5" reference="sys_user" type="reference"/>
+        <element label="Details" max_length="1000000" name="details" type="string"/>
+        <element label="User input" max_length="40" name="user_inpu0" type="string"/>
+        <element attributes="edge_encryption_enabled=true,encode_utf8=false" label="Approver2" max_length="32" name="approver2" reference="sys_user" type="reference"/>
+        <element attributes="edge_encryption_enabled=true,encode_utf8=false" label="Approver4" max_length="32" name="approver4" reference="sys_user" type="reference"/>
+        <element attributes="edge_encryption_enabled=true,encode_utf8=false" label="Approver3" max_length="32" name="approver3" reference="sys_user" type="reference"/>
+    </element>
+</database>

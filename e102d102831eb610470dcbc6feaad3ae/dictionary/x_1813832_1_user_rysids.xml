@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="536f362d836eba10470dcbc6feaad324" label="User RysIds" max_length="40" name="x_1813832_1_user_rysids" type="collection">
+        <element attributes="edge_encryption_enabled=true,encode_utf8=false" display="true" label="User" max_length="32" name="user" reference="sys_user" type="reference"/>
+        <element label="Name Ja" max_length="40" name="name_ja" type="string"/>
+        <element label="Affiliation Name" max_length="200" name="affiliation_name" type="string"/>
+        <element label="PSTNM" max_length="40" name="pstnm" type="string"/>
+        <element label="EMPNUM" max_length="40" name="empnum" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Active" max_length="40" name="active" type="boolean"/>
+        <element label="RYSID" max_length="40" name="rysid" type="string"/>
+        <element label="COPCOD" max_length="40" name="copcod" type="string"/>
+        <element label="SZKCOD" max_length="40" name="szkcod" type="string"/>
+        <element label="SYKINM" max_length="40" name="sykinm" type="string"/>
+        <element label="PSTKNGNNM" max_length="40" name="pstkngnnm" type="string"/>
+        <element attributes="edge_encryption_enabled=true,encode_utf8=false" label="Department" max_length="32" name="department" reference="x_1813832_1_department" type="reference"/>
+        <index name="index">
+            <element name="department"/>
+        </index>
+        <index name="index2">
+            <element name="user"/>
+        </index>
+    </element>
+</database>

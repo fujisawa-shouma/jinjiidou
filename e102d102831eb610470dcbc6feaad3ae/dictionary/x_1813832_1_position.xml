@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="d44f6a5b83d27250470dcbc6feaad392" label="Position" max_length="40" name="x_1813832_1_position" type="collection">
+        <element attributes="edge_encryption_enabled=true" label="Order" max_length="40" name="order" type="integer"/>
+        <element label="Code" max_length="40" name="code" type="string"/>
+        <element label="Name" max_length="40" name="name" type="string"/>
+    </element>
+</database>

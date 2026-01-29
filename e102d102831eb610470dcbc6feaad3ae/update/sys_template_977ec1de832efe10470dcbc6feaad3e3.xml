@@ -28,7 +28,7 @@
         <sys_updated_on>2026-01-22 05:10:35</sys_updated_on>
         <table>x_1813832_1_persona_change_req</table>
         <template>affiliation=221f79b7c6112284005d646b76ab978c^assigned_to=800b174138d089c868d09de320f9833b^opened_by=23c71e7d83213210470dcbc6feaad314^short_description=人事異動申請(一括)^stage=wait_for_request^state=2^EQ</template>
-        <user display_value="admin_komoto_ryota">23c71e7d83213210470dcbc6feaad314</user>
+        <user display_value="">23c71e7d83213210470dcbc6feaad314</user>
         <view/>
     </sys_template>
 </record_update>

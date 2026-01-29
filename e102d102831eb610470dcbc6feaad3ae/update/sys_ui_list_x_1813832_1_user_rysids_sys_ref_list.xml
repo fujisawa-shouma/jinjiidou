@@ -3,7 +3,7 @@
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element>user.user_name</element>
-            <list_id display_value="x_1813832_1_user_rysids" element="NULL" name="x_1813832_1_user_rysids" parent="NULL" relationship="NULL" sys_domain="global" view="ed95814183213210470dcbc6feaad3ce">4f91e8ec837af610470dcbc6feaad34a</list_id>
+            <list_id display_value="x_1813832_1_user_rysids" element="NULL" name="x_1813832_1_user_rysids" parent="NULL" relationship="NULL" sys_domain="global" view="9711b061bc3032108bb2f58e8d11a1c4">4f91e8ec837af610470dcbc6feaad34a</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>0</position>
@@ -40,7 +40,7 @@
             <sys_updated_by>admin_komoto_ryota</sys_updated_by>
             <sys_updated_on>2026-01-29 01:37:37</sys_updated_on>
             <sys_user/>
-            <view display_value="Reference List" name="sys_ref_list">ed95814183213210470dcbc6feaad3ce</view>
+            <view display_value="Reference List" name="sys_ref_list">9711b061bc3032108bb2f58e8d11a1c4</view>
             <view_name/>
         </sys_ui_list>
     </sys_ui_list>
